@@ -44,14 +44,24 @@
             .attr("room-filter-id", OTHER_ROOM_FILTER_ID);
     }
 
-    function setRoomFilterHeader() {
+    function makeRoomListHeader($rooms) {
+        return '<li></li>';
+    }
+
+    function resetRoomListItems() {
+        jQuery.each(room_filters, function(room_filter_id, category) {
+            $rooms = $('#_roomListItems li._roomLink._room[room-filter-id=' + room_filter_id + ']');
+            $header = makeRoomListHeader($rooms);
+            $('#_roomListItems').prepend($rooms);
+            $('#_roomListItems').prepend($header);
+        });
     }
 
     function main() {
         overwriteRoomListItems();
-        setRoomFilterHeader();
+        resetRoomListItems();
     }
 
-    setTimeout(overwriteRoomListItems,3000);
+    setTimeout(main,5000);
 })();
 
