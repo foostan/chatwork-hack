@@ -1,0 +1,7 @@
+Chatwork hack
+=======
+
+License
+-------
+
+	MIT

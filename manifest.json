@@ -1,0 +1,24 @@
+{
+    "name": "chatwork-hack",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "Make better use of ChatWork.",
+    "icons": {
+        "48": "img/icon48.png"
+    },
+    "permissions": [
+        "tabs", "http://*/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["https://kcw.kddi.ne.jp/*"],
+            "js" : [
+                "src/content_scripts.js"
+            ]
+        }
+    ],
+    "web_accessible_resources" : [
+        "/web_accessible_resources/index.js",
+        "/web_accessible_resources/jquery-ui.min.js"
+    ]
+}
